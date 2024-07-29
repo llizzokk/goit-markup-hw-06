@@ -136,9 +136,19 @@ img {
   color: #404bbf;
 }
 .mob-menu {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  position: fixed;
+  height: 100%;
+  width: 320px;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #fff;
+  padding: 72px 16px 40px 16px;
+}
+.mob-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
 .menu-btn {
   padding: 4.8px 3.6px;
@@ -793,14 +803,14 @@ footer {
     padding-top: 112px;
     padding-bottom: 112px;
   }
-}
-@media screen and (min-resolution: 2dppx) {
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url(../images/hero-tab@2x.jpg);
+  @media screen and (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero-tab@2x.jpg);
+    }
   }
   .hero-title {
     font-weight: 700;
