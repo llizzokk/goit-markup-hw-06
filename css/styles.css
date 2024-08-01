@@ -138,6 +138,7 @@ img {
 .menu-btn {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 .mob-menu {
   display: flex;
@@ -151,6 +152,18 @@ img {
   z-index: 999;
   background-color: #fff;
   padding: 72px 16px 40px 16px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .mob-close-btn {
   position: absolute;
@@ -163,6 +176,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 8px;
+  cursor: pointer;
 }
 .mob-close-icon {
   fill: #2e2f42;
@@ -181,8 +195,11 @@ img {
   line-height: 111%;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.current-page {
+.mob-navigation-link:hover,
+.mob-navigation-link:focus,
+.mob-navigation-link.current-page {
   color: #404bbf;
 }
 .mob-add {
@@ -192,7 +209,7 @@ img {
   list-style-type: none;
   margin-bottom: 48px;
 }
-.mob-add-link {
+.mob-add-item {
   margin-bottom: 24px;
 }
 .mob-add-link {
@@ -203,6 +220,11 @@ img {
   letter-spacing: 0.02em;
   color: #434455;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-add-link:hover,
+.head-add-link:focus {
+  color: #404bbf;
 }
 .mob-add-item:last-child {
   margin-bottom: 0;
@@ -228,10 +250,12 @@ img {
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.mob-soc-link:hover,
+.mob-soc-link:focus {
+  background-color: #404bbf;
+}
 .mob-soc-icon {
   fill: #f4f4fd;
-}
-.mob-menu-bottom {
 }
 
 /* main */
@@ -675,8 +699,8 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  min-height: 623px;
   border-radius: 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
@@ -753,7 +777,7 @@ footer {
   outline: transparent;
   background-color: transparent;
   border-radius: 4px;
-  width: 360px;
+  width: 256px;
   height: 40px;
   padding: 11px 38px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -784,7 +808,7 @@ footer {
   border: 1px solid rgba(46, 47, 66, 0.4);
   background-color: transparent;
   border-radius: 4px;
-  width: 360px;
+  width: 256px;
   height: 120px;
   padding: 8px 16px;
   font-weight: 400;
@@ -803,6 +827,7 @@ footer {
 .modal-checkfield {
   margin-right: auto;
   margin-bottom: 24px;
+  margin-right: 8px;
 }
 .visually-hidden {
   position: absolute;
@@ -943,6 +968,16 @@ footer {
   }
   .footer-form-text {
     text-align: start;
+  }
+  .modal {
+    width: 408px;
+    min-height: 584px;
+  }
+  .modal-input {
+    width: 360px;
+  }
+  .modal-textarea {
+    width: 360px;
   }
 }
 @media screen and (min-width: 1158px) {
