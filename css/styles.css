@@ -611,9 +611,6 @@ footer {
 .foot-soc-list-icon {
   fill: #f4f4fd;
 }
-.footer-form-wrap {
-  /* margin-left: auto; */
-}
 .footer-form {
   display: flex;
   justify-content: center;
@@ -829,6 +826,10 @@ footer {
   margin-bottom: 24px;
   margin-right: 8px;
 }
+.check-label {
+  display: flex;
+  align-items: center;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -846,6 +847,7 @@ footer {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   background-color: transparent;
   fill: transparent;
   border-radius: 2px;
