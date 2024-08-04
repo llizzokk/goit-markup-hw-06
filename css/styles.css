@@ -184,7 +184,7 @@ img {
 .mob-navigation {
   list-style-type: none;
 }
-.mob-menu-list-item {
+.mob-menu-list-item:not(:last-child) {
   margin-bottom: 40px;
 }
 .mob-navigation-link {
@@ -204,10 +204,10 @@ img {
 }
 .mob-add {
   font-style: normal;
+  margin-bottom: 48px;
 }
 .mob-adress {
   list-style-type: none;
-  margin-bottom: 48px;
 }
 .mob-add-item {
   margin-bottom: 24px;
@@ -221,6 +221,9 @@ img {
   color: #434455;
   text-decoration: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-add-link.number-link {
+  color: #4d5ae5;
 }
 .mob-add-link:hover,
 .head-add-link:focus {
@@ -272,7 +275,8 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-width: 1440px;
+  /* max-width: 1440px; */
+  max-width: 320px;
   margin: 0 auto;
   /* padding-top: 188px;
   padding-bottom: 188px; */
@@ -401,6 +405,7 @@ img {
 .team-container-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   /* gap: 24px; */
   gap: 72px;
   list-style-type: none;
@@ -573,6 +578,10 @@ footer {
   color: #f4f4fd;
   width: 264px;
 }
+.foot-soc {
+  margin-bottom: 72px;
+}
+
 .foot-soc-text {
   text-align: center;
   font-weight: 500;
@@ -588,7 +597,6 @@ footer {
   align-items: center;
   list-style-type: none;
   gap: 16px;
-  margin-bottom: 72px;
 }
 .foot-soc-list-item {
   width: 40px;
@@ -630,7 +638,7 @@ footer {
 .footer-form-input {
   border: 1px solid #ffffff;
   border-radius: 4px;
-  width: 264px;
+  width: 288px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background-color: transparent;
@@ -898,6 +906,12 @@ footer {
   }
   .head-adress {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .head-adress-link {
+    padding: 0;
+    font-size: 12px;
   }
   .menu-btn {
     display: none;
@@ -910,6 +924,7 @@ footer {
       url(../images/hero-tab.jpg);
     padding-top: 112px;
     padding-bottom: 112px;
+    max-width: 768px;
   }
   @media screen and (min-resolution: 2dppx) {
     .hero {
@@ -930,7 +945,7 @@ footer {
     max-width: 496px;
   }
   .advantages-container-list {
-    gap: 24px;
+    gap: 72px 24px;
   }
   .advantages-container-item {
     width: calc((100% - 24px) / 2);
@@ -942,7 +957,7 @@ footer {
     width: 552px;
   }
   .team-container-list {
-    gap: 24px;
+    gap: 64px 24px;
   }
   .team-container-card {
     width: calc((100% - 24px) / 2);
@@ -954,7 +969,7 @@ footer {
     width: calc((100% - 24px) / 2);
   }
   .foot-container {
-    width: 552px;
+    width: 584px;
     justify-content: flex-start;
   }
   .foot-title {
@@ -970,6 +985,9 @@ footer {
   }
   .footer-form-text {
     text-align: start;
+  }
+  .footer-form-input {
+    width: 264px;
   }
   .modal {
     width: 408px;
@@ -996,6 +1014,7 @@ footer {
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/hero-desk.jpg);
+    max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
   }
@@ -1050,11 +1069,18 @@ footer {
   .team-container-card {
     width: calc((100% - 72px) / 4);
   }
+  .portfolio-container-list {
+    gap: 48px 24px;
+  }
   .portfolio-container-list-item {
     width: calc((100% - 48px) / 3);
   }
   .foot-title {
     margin-right: 120px;
+    margin-bottom: 0;
+  }
+  .foot-soc {
+    margin-bottom: 0;
   }
   .footer-form-wrap {
     margin-left: auto;
